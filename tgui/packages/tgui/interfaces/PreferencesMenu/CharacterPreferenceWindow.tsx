@@ -16,6 +16,7 @@ enum Page {
   Jobs,
   Species,
   Quirks,
+  Loadout
 }
 
 const CharacterProfiles = (props: {
@@ -57,6 +58,9 @@ export const CharacterPreferenceWindow = (props, context) => {
       break;
     case Page.Jobs:
       pageContents = <JobsPage />;
+      break;
+    case Page.Loadout:
+      pageContents = <LoadoutPage />;
       break;
     case Page.Main:
       pageContents = (<MainPage
@@ -130,6 +134,16 @@ export const CharacterPreferenceWindow = (props, context) => {
                   */}
 
                   Occupations
+                </PageButton>
+              </Stack.Item>
+
+              <Stack.Item grow>
+                <PageButton
+                  currentPage={currentPage}
+                  page={Page.Loadout}
+                  setPage={setCurrentPage}
+                >
+                  Loadout
                 </PageButton>
               </Stack.Item>
 
